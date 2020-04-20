@@ -1,0 +1,27 @@
+package com.james.encountercalculator.model;
+
+public class PC {
+
+    public PC(int level) {
+        if (!setLevel(level))
+        {
+            throw new IllegalArgumentException("Level " + level + " invalid. Please provide a value between 1 and 20.");
+        }
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public boolean setLevel(int level) {
+        if (level > 0 && level < 21) {
+            this.level = level;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private int level;
+
+}
