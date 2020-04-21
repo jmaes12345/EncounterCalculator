@@ -7,7 +7,7 @@ public class Party {
     private List<PC> pcList = new ArrayList<>();
 
     public Party(List<PC> pcs) {
-        pcs.forEach(pc -> addPc(pc));
+        pcs.forEach(this::addPc);
     }
 
     public List<PC> getPcList() {
@@ -22,4 +22,9 @@ public class Party {
         return pcList.add(pc);
     }
 
+    public boolean addPc(int pcLevel) {
+        return pcList.add(
+                new PC(pcLevel)
+        );
+    }
 }

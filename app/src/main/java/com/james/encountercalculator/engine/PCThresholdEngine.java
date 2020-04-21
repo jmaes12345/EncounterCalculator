@@ -48,7 +48,7 @@ public class PCThresholdEngine {
         return overallThresholds;
     }
 
-    public static Map<Difficulty, Integer> getThresholdValueForLevel(int level) {
+    static Map<Difficulty, Integer> getThresholdValueForLevel(int level) {
         int[] levelValues = levelDifficultyXPMaster[level - 1];
         return new HashMap<Difficulty, Integer>() {{
             put(Difficulty.EASY, levelValues[1]);
@@ -58,7 +58,7 @@ public class PCThresholdEngine {
         }};
     }
 
-    public static Map<Difficulty, Integer> generateThresholdMap() {
+    static Map<Difficulty, Integer> generateThresholdMap() {
         Map<Difficulty, Integer> map = new HashMap<>();
         map.put(Difficulty.TOO_EASY, 0);
         map.put(Difficulty.EASY, 0);
