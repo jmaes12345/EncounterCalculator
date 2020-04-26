@@ -39,10 +39,12 @@ public class PCThresholdEngine {
         for (PC pc : party.getPcList()) {
             Map<Difficulty, Integer> pcLevelThresholds = getThresholdValueForLevel(pc.getLevel());
             for (Difficulty diff : Difficulty.values()) {
-                overallThresholds.replace(diff, overallThresholds.get(diff) + pcLevelThresholds.get(diff));
+                if (!diff.equals(Difficulty.TOO_EASY) && !diff.equals(Difficulty.IMPOSSIBLE)) {
+                    overallThresholds.replace(diff, overallThresholds.get(diff) + pcLevelThresholds.get(diff));
+                }
             }
         }
-
+        overallThresholds.replace(Difficulty.TOO_EASY, 0);
         overallThresholds.replace(Difficulty.IMPOSSIBLE, overallThresholds.get(Difficulty.DEADLY) * 2);
 
         return overallThresholds;
@@ -58,14 +60,18 @@ public class PCThresholdEngine {
         }};
     }
 
-    static Map<Difficulty, Integer> generateThresholdMap() {
+    static Map<Difficulty, Integer> generateThresholdMap(int tooEasy, int easy, int medium, int hard, int deadly, int impossible) {
         Map<Difficulty, Integer> map = new HashMap<>();
-        map.put(Difficulty.TOO_EASY, 0);
-        map.put(Difficulty.EASY, 0);
-        map.put(Difficulty.MEDIUM, 0);
-        map.put(Difficulty.HARD, 0);
-        map.put(Difficulty.DEADLY, 0);
-        map.put(Difficulty.IMPOSSIBLE, 0);
+        map.put(Difficulty.TOO_EASY, tooEasy);
+        map.put(Difficulty.EASY, easy);
+        map.put(Difficulty.MEDIUM, medium);
+        map.put(Difficulty.HARD, hard);
+        map.put(Difficulty.DEADLY, deadly);
+        map.put(Difficulty.IMPOSSIBLE, impossible);
         return map;
+    }
+
+    static Map<Difficulty, Integer> generateThresholdMap() {
+        return generateThresholdMap(0, 0, 0, 0, 0, 0);
     }
 }

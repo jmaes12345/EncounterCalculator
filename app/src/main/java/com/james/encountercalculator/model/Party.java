@@ -1,12 +1,19 @@
 package com.james.encountercalculator.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Party {
     private List<PC> pcList = new ArrayList<>();
 
-    public Party(List<PC> pcs) {
+    public Party(int[] pcs) {
+        Arrays.stream(pcs).boxed().collect(Collectors.toList())
+                .forEach(this::addPc);
+    }
+
+    public Party(List<Integer> pcs) {
         pcs.forEach(this::addPc);
     }
 
