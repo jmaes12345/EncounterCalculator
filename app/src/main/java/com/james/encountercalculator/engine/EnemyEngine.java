@@ -1,5 +1,6 @@
 package com.james.encountercalculator.engine;
 
+import com.james.encountercalculator.model.Enemy;
 import com.james.encountercalculator.model.EnemyParty;
 
 public class EnemyEngine {
@@ -21,5 +22,15 @@ public class EnemyEngine {
         }
     }
 
+	public static int calculateEnemyXPTotal(EnemyParty enemyParty) {
+		int totalXP = 0;
+		for (Enemy enemy : enemyParty.getEnemyList()) {
+			totalXP += enemy.getXP();
+		}
+
+		totalXP *= calculateEnemyMultiplier(enemyParty);
+
+		return totalXP;
+	}
 
 }
