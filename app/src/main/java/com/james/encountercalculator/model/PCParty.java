@@ -5,15 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Party {
+public class PCParty {
     private List<PC> pcList = new ArrayList<>();
 
-    public Party(int[] pcs) {
+    public PCParty(int[] pcs) {
         Arrays.stream(pcs).boxed().collect(Collectors.toList())
                 .forEach(this::addPc);
     }
 
-    public Party(List<Integer> pcs) {
+    public PCParty(List<Integer> pcs) {
         pcs.forEach(this::addPc);
     }
 

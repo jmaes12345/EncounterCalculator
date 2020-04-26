@@ -1,7 +1,7 @@
 package com.james.encountercalculator.engine;
 
 import com.james.encountercalculator.model.Difficulty;
-import com.james.encountercalculator.model.Party;
+import com.james.encountercalculator.model.PCParty;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,21 +20,21 @@ class PCThresholdEngineTest {
 
     static Stream<Arguments> testCalculatePCThresholdsParams() {
         return Stream.of(
-                Arguments.of(0, 25, 50, 75, 100, 200, new Party(new int[]{1})),
-                Arguments.of(0, 100, 200, 300, 400, 800, new Party(new int[]{2, 2})),
-                Arguments.of(0, 225, 450, 675, 1200, 2400, new Party(new int[]{3, 3, 3})),
-                Arguments.of(0, 500, 1000, 1500, 2000, 4000, new Party(new int[]{4, 4, 4, 4})),
-                Arguments.of(0, 1250, 2500, 3750, 5500, 11000, new Party(new int[]{5, 5, 5, 5, 5})),
-                Arguments.of(0, 11200, 22800, 34000, 50800, 101600, new Party(new int[]{20, 20, 20, 20})),
-                Arguments.of(0, 450, 900, 1350, 2000, 4000, new Party(new int[]{3, 4, 5}))
+                Arguments.of(0, 25, 50, 75, 100, 200, new PCParty(new int[]{1})),
+                Arguments.of(0, 100, 200, 300, 400, 800, new PCParty(new int[]{2, 2})),
+                Arguments.of(0, 225, 450, 675, 1200, 2400, new PCParty(new int[]{3, 3, 3})),
+                Arguments.of(0, 500, 1000, 1500, 2000, 4000, new PCParty(new int[]{4, 4, 4, 4})),
+                Arguments.of(0, 1250, 2500, 3750, 5500, 11000, new PCParty(new int[]{5, 5, 5, 5, 5})),
+                Arguments.of(0, 11200, 22800, 34000, 50800, 101600, new PCParty(new int[]{20, 20, 20, 20})),
+                Arguments.of(0, 450, 900, 1350, 2000, 4000, new PCParty(new int[]{3, 4, 5}))
         );
     }
 
     @ParameterizedTest
     @MethodSource("testCalculatePCThresholdsParams")
-    void testCalculatePCThresholds(int tooEasy, int easy, int medium, int hard, int deadly, int impossible, Party party) {
+    void testCalculatePCThresholds(int tooEasy, int easy, int medium, int hard, int deadly, int impossible, PCParty PCParty) {
         Map<Difficulty, Integer> expectedThresholds = generateThresholdMap(tooEasy, easy, medium, hard, deadly, impossible);
-        Map<Difficulty, Integer> partyMap = PCThresholdEngine.calculatePCThresholds(party);
+        Map<Difficulty, Integer> partyMap = PCThresholdEngine.calculatePCThresholds(PCParty);
 
         for (Difficulty diff : Difficulty.values()) {
             assertEquals(partyMap.get(diff), expectedThresholds.get(diff), "Difficulty for " + diff + " did not match");

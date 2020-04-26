@@ -2,7 +2,7 @@ package com.james.encountercalculator.engine;
 
 import com.james.encountercalculator.model.Difficulty;
 import com.james.encountercalculator.model.PC;
-import com.james.encountercalculator.model.Party;
+import com.james.encountercalculator.model.PCParty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,10 +33,10 @@ public class PCThresholdEngine {
             {20, 2800, 5700, 8500, 12700}
     };
 
-    public static Map<Difficulty, Integer> calculatePCThresholds(Party party) {
+    public static Map<Difficulty, Integer> calculatePCThresholds(PCParty PCParty) {
         Map<Difficulty, Integer> overallThresholds = generateThresholdMap();
 
-        for (PC pc : party.getPcList()) {
+        for (PC pc : PCParty.getPcList()) {
             Map<Difficulty, Integer> pcLevelThresholds = getThresholdValueForLevel(pc.getLevel());
             for (Difficulty diff : Difficulty.values()) {
                 if (!diff.equals(Difficulty.TOO_EASY) && !diff.equals(Difficulty.IMPOSSIBLE)) {
