@@ -16,6 +16,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EnemyEngineTest {
 
+    @ParameterizedTest
+    @MethodSource("enemyMultiplierScenarios")
+    void testCalculateEnemyMultiplier(double expectedMultiplier, EnemyParty party) {
+        assertEquals(expectedMultiplier, EnemyEngine.calculateEnemyMultiplier(party));
+    }
+
+    @ParameterizedTest
+    @MethodSource("enemyCalculatorScenarios")
+    void testCalculateEnemyXPTotal(int expectedXP, List<Enemy> partyList) {
+        assertEquals(expectedXP, EnemyEngine.calculateEnemyXPTotal(new EnemyParty(partyList)));
+    }
+
 	static Stream<Arguments> enemyCalculatorScenarios() {
         return Stream.of(
 		        // Multiplier is applied
@@ -49,17 +61,5 @@ class EnemyEngineTest {
 				Arguments.of(4, createParty(15)),
 				Arguments.of(4, createParty(20))
 		);
-	}
-
-    @ParameterizedTest
-    @MethodSource("enemyMultiplierScenarios")
-    void calculateEnemyMultiplier(double expectedMultiplier, EnemyParty party) {
-        assertEquals(expectedMultiplier, EnemyEngine.calculateEnemyMultiplier(party));
-    }
-
-	@ParameterizedTest
-	@MethodSource("enemyCalculatorScenarios")
-	void calculateEnemyXPTotal(int expectedXP, List<Enemy> partyList) {
-		assertEquals(expectedXP, EnemyEngine.calculateEnemyXPTotal(new EnemyParty(partyList)));
 	}
 }
