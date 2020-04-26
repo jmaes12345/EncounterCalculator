@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static com.james.encountercalculator.engine.EncounterEngine.calculateEncounterThreshold;
+import static com.james.encountercalculator.engine.PCThresholdEngine.generateThresholdMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EncounterEngineTest {
@@ -20,10 +21,22 @@ class EncounterEngineTest {
         assertEquals(expectedDifficulty, calculateEncounterThreshold(pcThresholds, enemyXPTotal));
     }
 
-    // TODO add scenarios
     private static Stream<Arguments> encounterThresholdScenarios() {
         return Stream.of(
-                Arguments.of(Difficulty.TOO_EASY, null, 0)
+                Arguments.of(Difficulty.TOO_EASY, null, 0),
+                // 4 PCs at Level 3
+                Arguments.of(Difficulty.TOO_EASY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 1),
+                Arguments.of(Difficulty.TOO_EASY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 299),
+                Arguments.of(Difficulty.EASY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 300),
+                Arguments.of(Difficulty.EASY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 599),
+                Arguments.of(Difficulty.MEDIUM, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 600),
+                Arguments.of(Difficulty.MEDIUM, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 899),
+                Arguments.of(Difficulty.HARD, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 900),
+                Arguments.of(Difficulty.HARD, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 1599),
+                Arguments.of(Difficulty.DEADLY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 1600),
+                Arguments.of(Difficulty.DEADLY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 3199),
+                Arguments.of(Difficulty.IMPOSSIBLE, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 3200),
+                Arguments.of(Difficulty.IMPOSSIBLE, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 4800)
         );
     }
 }
