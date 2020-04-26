@@ -14,16 +14,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EncounterEngineTest {
 
-    // TODO add scenarios
-    private static Stream<Arguments> encounterThresholdScenarios() {
-        return Stream.of(
-                Arguments.of()
-        );
-    }
-
     @ParameterizedTest
     @MethodSource("encounterThresholdScenarios")
     void testCalculateEncounterThreshold(Difficulty expectedDifficulty, Map<Difficulty, Integer> pcThresholds, int enemyXPTotal) {
         assertEquals(expectedDifficulty, calculateEncounterThreshold(pcThresholds, enemyXPTotal));
+    }
+
+    // TODO add scenarios
+    private static Stream<Arguments> encounterThresholdScenarios() {
+        return Stream.of(
+                Arguments.of(Difficulty.TOO_EASY, null, 0)
+        );
     }
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 public class PCThresholdEngine {
 
     // Level, Easy, Medium, Hard, Deadly. DMG pg 82
-    static int[][] levelDifficultyXPMaster = {
+    final static int[][] levelDifficultyXPMaster = {
             {1, 25, 50, 75, 100},
             {2, 50, 100, 150, 200},
             {3, 75, 150, 225, 400},
