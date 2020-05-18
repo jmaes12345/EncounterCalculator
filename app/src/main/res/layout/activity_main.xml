@@ -36,15 +36,26 @@
       app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TableLayout
-          android:id="@+id/PCTable"
+	        android:id="@+id/PartyTable"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
+	        android:keyboardNavigationCluster="true"
           android:visibility="visible">
 
             <TableRow
-              android:id="@+id/table_row"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" />
+	            android:id="@+id/table_header"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:focusable="false" />
+
+	        <TableRow
+		        android:id="@+id/table_row"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:focusable="true"
+		        android:focusedByDefault="true">
+
+	        </TableRow>
 
         </TableLayout>
     </androidx.viewpager.widget.ViewPager>
@@ -55,6 +66,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="bottom|end"
       android:layout_margin="@dimen/fab_margin"
+	    android:tint="#FFFFFF"
       app:srcCompat="@android:drawable/ic_menu_save" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -63,7 +75,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="bottom|start"
       android:layout_margin="@dimen/fab_margin"
-      android:visibility="visible"
-      app:srcCompat="@android:drawable/ic_menu_add" />
+	    android:tint="#FFFFFF"
+	    app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
