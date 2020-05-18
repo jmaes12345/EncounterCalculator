@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Stream;
 
 import static com.james.encountercalculator.engine.EncounterEngine.calculateEncounterThreshold;
@@ -18,12 +19,11 @@ class EncounterEngineTest {
     @ParameterizedTest
     @MethodSource("encounterThresholdScenarios")
     void testCalculateEncounterThreshold(Difficulty expectedDifficulty, Map<Difficulty, Integer> pcThresholds, int enemyXPTotal) {
-        assertEquals(expectedDifficulty, calculateEncounterThreshold(pcThresholds, enemyXPTotal));
+        assertEquals(expectedDifficulty, calculateEncounterThreshold((TreeMap<Difficulty, Integer>) pcThresholds, enemyXPTotal));
     }
 
     private static Stream<Arguments> encounterThresholdScenarios() {
         return Stream.of(
-                Arguments.of(Difficulty.TOO_EASY, null, 0),
                 // 4 PCs at Level 3
                 Arguments.of(Difficulty.TOO_EASY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 1),
                 Arguments.of(Difficulty.TOO_EASY, generateThresholdMap(0, 300, 600, 900, 1600, 3200), 299),

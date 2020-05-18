@@ -4,13 +4,13 @@ import com.james.encountercalculator.model.Difficulty;
 import com.james.encountercalculator.model.PC;
 import com.james.encountercalculator.model.PCParty;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class PCThresholdEngine {
 
     // Level, Easy, Medium, Hard, Deadly. DMG pg 82
-    final static int[][] levelDifficultyXPMaster = {
+    private final static int[][] levelDifficultyXPMaster = {
             {1, 25, 50, 75, 100},
             {2, 50, 100, 150, 200},
             {3, 75, 150, 225, 400},
@@ -52,7 +52,7 @@ public class PCThresholdEngine {
 
     static Map<Difficulty, Integer> getThresholdValueForLevel(int level) {
         int[] levelValues = levelDifficultyXPMaster[level - 1];
-        return new HashMap<Difficulty, Integer>() {{
+        return new TreeMap<Difficulty, Integer>() {{
             put(Difficulty.EASY, levelValues[1]);
             put(Difficulty.MEDIUM, levelValues[2]);
             put(Difficulty.HARD, levelValues[3]);
@@ -61,7 +61,7 @@ public class PCThresholdEngine {
     }
 
     static Map<Difficulty, Integer> generateThresholdMap(int tooEasy, int easy, int medium, int hard, int deadly, int impossible) {
-        Map<Difficulty, Integer> map = new HashMap<>();
+        Map<Difficulty, Integer> map = new TreeMap<>();
         map.put(Difficulty.TOO_EASY, tooEasy);
         map.put(Difficulty.EASY, easy);
         map.put(Difficulty.MEDIUM, medium);
