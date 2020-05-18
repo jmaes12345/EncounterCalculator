@@ -21,4 +21,12 @@ public class EncounterController {
         int enemyXPTotal = calculateEnemyXPTotal(enemyParty);
         return EncounterEngine.calculateEncounterThreshold((TreeMap<Difficulty, Integer>) pcThresholds, enemyXPTotal);
     }
+
+    public void setPCParty(PCParty pcParty) {
+        this.pcParty = pcParty;
+    }
+
+    public void setEnemyParty(EnemyParty enemyParty) {
+        this.enemyParty = enemyParty;
+    }
 }
