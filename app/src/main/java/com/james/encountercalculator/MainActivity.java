@@ -25,18 +25,21 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab1 = findViewById(R.id.fab);
         FloatingActionButton fab2 = findViewById(R.id.fab2);
 
-        fab1.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton saveFAB = findViewById(R.id.saveFAB);
+        FloatingActionButton addFAB = findViewById(R.id.addFAB);
+
+        saveFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Party saved", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
 
-        fab2.setOnClickListener(new View.OnClickListener() {
+        addFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "New party member created", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
