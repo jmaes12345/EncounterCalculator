@@ -1,4 +1,4 @@
-package com.james.encountercalculator.model;
+package com.encountercalculator.model;
 
 public enum Difficulty {
     TOO_EASY(1),

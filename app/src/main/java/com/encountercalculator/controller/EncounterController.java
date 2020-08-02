@@ -1,15 +1,15 @@
-package com.james.encountercalculator.controller;
+package com.encountercalculator.controller;
 
-import com.james.encountercalculator.engine.EncounterEngine;
-import com.james.encountercalculator.model.Difficulty;
-import com.james.encountercalculator.model.EnemyParty;
-import com.james.encountercalculator.model.PCParty;
+import com.encountercalculator.engine.EncounterEngine;
+import com.encountercalculator.model.Difficulty;
+import com.encountercalculator.model.EnemyParty;
+import com.encountercalculator.model.PCParty;
 
 import java.util.Map;
 import java.util.TreeMap;
 
-import static com.james.encountercalculator.engine.EnemyEngine.calculateEnemyXPTotal;
-import static com.james.encountercalculator.engine.PCThresholdEngine.calculatePCThresholds;
+import static com.encountercalculator.engine.EnemyEngine.calculateEnemyXPTotal;
+import static com.encountercalculator.engine.PCThresholdEngine.calculatePCThresholds;
 
 public class EncounterController {
 

@@ -1,7 +1,7 @@
-package com.james.encountercalculator.engine;
+package com.encountercalculator.engine;
 
-import com.james.encountercalculator.model.Enemy;
-import com.james.encountercalculator.model.EnemyParty;
+import com.encountercalculator.model.Enemy;
+import com.encountercalculator.model.EnemyParty;
 
 public class EnemyEngine {
     public static double calculateEnemyMultiplier(EnemyParty enemyParty) {

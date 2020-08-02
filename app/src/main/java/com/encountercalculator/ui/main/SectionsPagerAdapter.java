@@ -1,4 +1,4 @@
-package com.james.encountercalculator.ui.main;
+package com.encountercalculator.ui.main;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.james.encountercalculator.R;
+import com.encountercalculator.R;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

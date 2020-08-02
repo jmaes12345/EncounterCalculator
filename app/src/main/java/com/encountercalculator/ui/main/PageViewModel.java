@@ -1,4 +1,4 @@
-package com.james.encountercalculator.ui.main;
+package com.encountercalculator.ui.main;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

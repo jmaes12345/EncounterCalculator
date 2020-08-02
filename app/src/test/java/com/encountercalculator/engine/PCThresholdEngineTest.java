@@ -1,7 +1,7 @@
-package com.james.encountercalculator.engine;
+package com.encountercalculator.engine;
 
-import com.james.encountercalculator.model.Difficulty;
-import com.james.encountercalculator.model.PCParty;
+import com.encountercalculator.model.Difficulty;
+import com.encountercalculator.model.PCParty;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static com.james.encountercalculator.engine.PCThresholdEngine.generateThresholdMap;
+import static com.encountercalculator.engine.PCThresholdEngine.generateThresholdMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 

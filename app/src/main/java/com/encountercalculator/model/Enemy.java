@@ -1,4 +1,4 @@
-package com.james.encountercalculator.model;
+package com.encountercalculator.model;
 
 public class Enemy {
     private int XP;

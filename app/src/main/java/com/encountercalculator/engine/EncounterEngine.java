@@ -1,6 +1,6 @@
-package com.james.encountercalculator.engine;
+package com.encountercalculator.engine;
 
-import com.james.encountercalculator.model.Difficulty;
+import com.encountercalculator.model.Difficulty;
 
 import java.util.TreeMap;
 

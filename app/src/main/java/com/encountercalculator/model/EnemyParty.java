@@ -1,4 +1,4 @@
-package com.james.encountercalculator.model;
+package com.encountercalculator.model;
 
 import java.util.ArrayList;
 import java.util.List;
