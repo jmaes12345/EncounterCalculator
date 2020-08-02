@@ -13,20 +13,12 @@ import static com.james.encountercalculator.engine.PCThresholdEngine.calculatePC
 
 public class EncounterController {
 
-    private PCParty pcParty;
-    private EnemyParty enemyParty;
-
-    public Difficulty getEncounterDifficulty() {
-        Map<Difficulty, Integer> pcThresholds = calculatePCThresholds(pcParty);
+    public static Difficulty getEncounterDifficulty(Map<Difficulty, Integer> pcThresholds, EnemyParty enemyParty) {
         int enemyXPTotal = calculateEnemyXPTotal(enemyParty);
         return EncounterEngine.calculateEncounterThreshold((TreeMap<Difficulty, Integer>) pcThresholds, enemyXPTotal);
     }
 
-    public void setPCParty(PCParty pcParty) {
-        this.pcParty = pcParty;
-    }
-
-    public void setEnemyParty(EnemyParty enemyParty) {
-        this.enemyParty = enemyParty;
+    public static Map<Difficulty, Integer> generatePCThresholds(PCParty pcParty) {
+        return calculatePCThresholds(pcParty);
     }
 }
