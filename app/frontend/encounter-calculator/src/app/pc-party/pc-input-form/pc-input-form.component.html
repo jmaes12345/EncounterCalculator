@@ -1,0 +1,26 @@
+<form (ngSubmit)="addPC()" [formGroup]="pcGroup" class="pc-input-form">
+	<mat-form-field appearance="fill" color="accent">
+		<mat-label>Level of PC</mat-label>
+		<input
+			[formControl]="pcLevelControl"
+			matInput
+			max="20"
+			min="1"
+			type="number">
+		<mat-error *ngIf="pcLevelControl.invalid">Level must be between 1 and 20</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="fill" color="accent">
+		<mat-label>Number of PCs at this level</mat-label>
+		<input
+			[formControl]="pcCountControl"
+			matInput
+			min="1"
+			type="number">
+		<mat-error *ngIf="pcCountControl.invalid">Min PC count: 1</mat-error>
+	</mat-form-field>
+
+	<button color="primary" mat-raised-button type="submit">
+		Add
+	</button>
+</form>

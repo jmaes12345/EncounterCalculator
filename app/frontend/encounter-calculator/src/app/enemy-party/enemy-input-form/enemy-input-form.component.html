@@ -1,0 +1,34 @@
+<form (ngSubmit)="addEnemies()" [formGroup]="enemyGroup" class="pc-input-form">
+	<mat-form-field appearance="fill" color="accent">
+		<mat-label>Enemy type/name</mat-label>
+		<input
+			[formControl]="enemyNameControl"
+			matInput
+			type="text">
+		<mat-error *ngIf="enemyNameControl.invalid">Enemy name is required</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="fill" color="accent">
+		<mat-label>XP of enemy</mat-label>
+		<input
+			[formControl]="xpControl"
+			matInput
+			min="1"
+			type="number">
+		<mat-error *ngIf="xpControl.invalid">Enemy XP is required</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="fill" color="accent">
+		<mat-label>Number of these enemies</mat-label>
+		<input
+			[formControl]="enemyOfThisTypeCountControl"
+			matInput
+			min="1"
+			type="number">
+		<mat-error *ngIf="enemyOfThisTypeCountControl.invalid">Number of enemies required</mat-error>
+	</mat-form-field>
+
+	<button color="primary" mat-raised-button type="submit">
+		Add
+	</button>
+</form>

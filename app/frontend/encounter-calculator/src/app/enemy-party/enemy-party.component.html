@@ -1,0 +1,29 @@
+<app-enemy-input-form></app-enemy-input-form>
+<mat-table [dataSource]="dataSource">
+
+	<ng-container matColumnDef="currentIndex">
+		<mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+		<mat-cell *matCellDef="let enemyPartyEntry">{{enemyPartyEntry.currentIndex}}</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="enemyName">
+		<mat-header-cell *matHeaderCellDef>Enemy Name/Type</mat-header-cell>
+		<mat-cell *matCellDef="let enemyPartyEntry"
+				  class="description-cell">{{enemyPartyEntry.enemyName}}</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="enemyXP">
+		<mat-header-cell *matHeaderCellDef>XP per Enemy</mat-header-cell>
+		<mat-cell *matCellDef="let enemyPartyEntry"
+				  class="duration-cell">{{enemyPartyEntry.enemyXP}}</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="enemyCount">
+		<mat-header-cell *matHeaderCellDef>Count</mat-header-cell>
+		<mat-cell *matCellDef="let enemyPartyEntry"
+				  class="duration-cell">{{enemyPartyEntry.enemyCount}}</mat-cell>
+	</ng-container>
+
+	<mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+	<mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
+</mat-table>

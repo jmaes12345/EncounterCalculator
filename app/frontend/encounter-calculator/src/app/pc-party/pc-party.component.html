@@ -1,0 +1,23 @@
+<app-pc-input-form></app-pc-input-form>
+<mat-table [dataSource]="dataSource">
+
+	<ng-container matColumnDef="currentIndex">
+		<mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+		<mat-cell *matCellDef="let pcPartyEntry">{{pcPartyEntry.currentIndex}}</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="pcLevel">
+		<mat-header-cell *matHeaderCellDef>PC Level</mat-header-cell>
+		<mat-cell *matCellDef="let pcPartyEntry"
+				  class="description-cell">{{pcPartyEntry.pcLevel}}</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="pcCount">
+		<mat-header-cell *matHeaderCellDef>Count</mat-header-cell>
+		<mat-cell *matCellDef="let pcPartyEntry"
+				  class="duration-cell">{{pcPartyEntry.pcCount}}</mat-cell>
+	</ng-container>
+
+	<mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+	<mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
+</mat-table>
