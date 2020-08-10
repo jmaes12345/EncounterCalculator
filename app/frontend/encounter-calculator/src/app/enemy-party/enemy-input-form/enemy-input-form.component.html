@@ -28,7 +28,11 @@
 		<mat-error *ngIf="enemyOfThisTypeCountControl.invalid">Number of enemies required</mat-error>
 	</mat-form-field>
 
-	<button color="primary" mat-raised-button type="submit">
+	<button
+		[disabled]="!enemyGroup.valid"
+		color="primary"
+		mat-raised-button
+		type="submit">
 		Add
 	</button>
 </form>

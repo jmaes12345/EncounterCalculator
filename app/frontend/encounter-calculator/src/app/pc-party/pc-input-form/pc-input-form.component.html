@@ -20,7 +20,11 @@
 		<mat-error *ngIf="pcCountControl.invalid">Min PC count: 1</mat-error>
 	</mat-form-field>
 
-	<button color="primary" mat-raised-button type="submit">
+	<button
+		[disabled]="!pcGroup.valid"
+		color="primary"
+		mat-raised-button
+		type="submit">
 		Add
 	</button>
 </form>
