@@ -1,1 +1,10 @@
-<p>pc-party-thresholds works!</p>
+<mat-grid-list cols="6">
+	<ng-container *ngFor="let rank of difficultyRanks">
+		<mat-grid-tile class="{{rank.rank}}">
+			<mat-card-content>
+				<h4>{{rank.rank}}</h4>
+				<h4>{{rank.xp}}</h4>
+			</mat-card-content>
+		</mat-grid-tile>
+	</ng-container>
+</mat-grid-list>

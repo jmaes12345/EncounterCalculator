@@ -1,18 +1,18 @@
 <body class="mat-app-background">
-<mat-grid-list cols="2" rowHeight="4:1">
+<mat-grid-list cols="2" rowHeight="2:1">
 	<mat-grid-tile-header colspan="2">
 		<h1 align="center">{{title}}</h1>
 	</mat-grid-tile-header>
-	<mat-grid-tile rowspan="3">
+	<mat-grid-tile>
 		<app-pc-party></app-pc-party>
 	</mat-grid-tile>
-	<mat-grid-tile rowspan="3">
+	<mat-grid-tile>
 		<app-enemy-party></app-enemy-party>
 	</mat-grid-tile>
 	<!--	<mat-grid-tile colspan="2">-->
 	<!--		<mat-slider min="1" max="100" step="1" value="1"></mat-slider>-->
 	<!--	</mat-grid-tile>-->
-	<mat-grid-tile colspan="2">
+	<mat-grid-tile colspan="2" rowspan="2">
 		<app-result-view></app-result-view>
 	</mat-grid-tile>
 </mat-grid-list>

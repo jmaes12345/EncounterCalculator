@@ -24,6 +24,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
 	declarations: [
@@ -49,7 +50,8 @@ import {MatTableModule} from "@angular/material/table";
 		MatButtonModule,
 		ReactiveFormsModule,
 		// MatSliderModule,
-		MatTableModule
+		MatTableModule,
+		MatCardModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
