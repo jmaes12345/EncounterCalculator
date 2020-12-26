@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.encountercalculator
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, hibernate-validator, http-client, java, java-application, junit, logback, lombok, maven, netty-server, readme, shade, yaml]
