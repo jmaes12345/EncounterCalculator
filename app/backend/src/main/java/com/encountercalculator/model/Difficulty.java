@@ -1,5 +1,10 @@
 package com.encountercalculator.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public enum Difficulty {
     TOO_EASY(1),
     EASY(2),
@@ -9,12 +14,4 @@ public enum Difficulty {
     IMPOSSIBLE(6);
 
     private final int rank;
-
-    Difficulty(int rank) {
-        this.rank = rank;
-    }
-
-    int getRank() {
-        return rank;
-    }
 }

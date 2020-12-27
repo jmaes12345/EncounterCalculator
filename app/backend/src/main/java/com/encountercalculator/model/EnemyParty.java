@@ -1,25 +1,18 @@
 package com.encountercalculator.model;
 
-import java.util.ArrayList;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class EnemyParty {
-    private List<Enemy> enemyList = new ArrayList<>();
-
-    public EnemyParty(List<Enemy> enemies) {
-        enemies.forEach(this::addEnemy);
-    }
-
-    public List<Enemy> getEnemyList() {
-        return enemyList;
-    }
-
-    public void setEnemyList(List<Enemy> enemyList) {
-        this.enemyList = enemyList;
-    }
+    private List<Enemy> enemyList;
 
     public boolean addEnemy(Enemy enemy) {
         return enemyList.add(enemy);
     }
-
 }

@@ -1,16 +1,16 @@
 package com.encountercalculator.model;
 
+import lombok.Getter;
+
+@Getter
 public class PC {
+    private int level;
 
     public PC(int level) {
         if (!setLevel(level))
         {
             throw new IllegalArgumentException("Level " + level + " invalid. Please provide a value between 1 and 20.");
         }
-    }
-
-    public int getLevel() {
-        return level;
     }
 
     public boolean setLevel(int level) {
@@ -21,7 +21,4 @@ public class PC {
             return false;
         }
     }
-
-    private int level;
-
 }
