@@ -1,6 +1,5 @@
-package java.com.encountercalculator.model;
+package com.encountercalculator.model;
 
-import com.encountercalculator.model.PC;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;

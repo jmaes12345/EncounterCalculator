@@ -1,6 +1,5 @@
-package java.com.encountercalculator.engine;
+package com.encountercalculator.engine;
 
-import com.encountercalculator.engine.PCThresholdEngine;
 import com.encountercalculator.model.Difficulty;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,7 +11,6 @@ import java.util.TreeMap;
 import java.util.stream.Stream;
 
 import static com.encountercalculator.engine.EncounterEngine.calculateEncounterThreshold;
-import static com.encountercalculator.engine.PCThresholdEngine.generateThresholdMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EncounterEngineTest {

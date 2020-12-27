@@ -1,6 +1,5 @@
-package java.com.encountercalculator.engine;
+package com.encountercalculator.engine;
 
-import com.encountercalculator.engine.EnemyEngine;
 import com.encountercalculator.model.Enemy;
 import com.encountercalculator.model.EnemyParty;
 
