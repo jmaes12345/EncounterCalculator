@@ -18,7 +18,7 @@
 		<jdk.version>11</jdk.version>
 		<release.version>11</release.version>
 		<micronaut.version>2.2.2</micronaut.version>
-		<micronaut.openapi.version>2.2.1</micronaut.openapi.version>
+		<micronaut.openapi.version>2.2.2</micronaut.openapi.version>
 		<exec.mainClass>com.encountercalculator.Application</exec.mainClass>
 		<micronaut.runtime>netty</micronaut.runtime>
 		<micronaut.aws.version>2.2.5</micronaut.aws.version>
@@ -91,8 +91,6 @@
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
 			<artifactId>swagger-annotations</artifactId>
-			<version>2.1.6</version>
-			<scope>compile</scope>
 		</dependency>
 
 		<!-- JUnit -->
@@ -147,18 +145,17 @@
 							<artifactId>micronaut-validation</artifactId>
 							<version>${micronaut.version}</version>
 						</path>
-<!--						<path>-->
-<!--							<groupId>io.micronaut.openapi</groupId>-->
-<!--							<artifactId>micronaut-openapi</artifactId>-->
-<!--							<version>${micronaut.openapi.version}</version>-->
-<!--						</path>-->
+						<path>
+							<groupId>io.micronaut.openapi</groupId>
+							<artifactId>micronaut-openapi</artifactId>
+							<version>${micronaut.openapi.version}</version>
+						</path>
 					</annotationProcessorPaths>
+					<fork>true</fork>
 					<compilerArgs>
 						<arg>-Amicronaut.processing.group=com.encountercalculator</arg>
 						<arg>-Amicronaut.processing.module=backend</arg>
-						<arg>
-							-J-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop
-						</arg>
+						<arg>-J-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop</arg>
 					</compilerArgs>
 				</configuration>
 			</plugin>
