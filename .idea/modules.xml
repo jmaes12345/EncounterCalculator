@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EncounterCalculator.iml" filepath="$PROJECT_DIR$/.idea/modules/EncounterCalculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/backend/backend.iml" filepath="$PROJECT_DIR$/app/backend/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/frontend/encounter-calculator/frontend.iml" filepath="$PROJECT_DIR$/app/frontend/encounter-calculator/frontend.iml" />
     </modules>
   </component>

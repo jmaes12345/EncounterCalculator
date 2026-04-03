@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <option name="micronaut.processing.group" value="com.encountercalculator" />
         <option name="micronaut.processing.module" value="backend" />
-        <processorPath useClasspath="false">
+        <processorPath>
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.16/lombok-1.18.16.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-inject-java/2.2.2/micronaut-inject-java-2.2.2.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar" />
@@ -35,20 +35,17 @@
           <entry name="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.11.1/jackson-core-2.11.1.jar" />
           <entry name="$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.1/jackson-dataformat-yaml-2.11.1.jar" />
           <entry name="$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.11.1/jackson-datatype-jsr310-2.11.1.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations/2.1.6/swagger-annotations-2.1.6.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models/2.1.6/swagger-models-2.1.6.jar" />
           <entry name="$MAVEN_REPOSITORY$/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models/2.1.6/swagger-models-2.1.6.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations/2.1.6/swagger-annotations-2.1.6.jar" />
         </processorPath>
         <module name="backend" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="backend" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="backend" options="-Amicronaut.processing.group=com.encountercalculator -Amicronaut.processing.module=backend -J-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop" />
+      <module name="backend" options="-parameters -Amicronaut.processing.group=com.encountercalculator -Amicronaut.processing.module=backend -J-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop" />
     </option>
   </component>
 </project>
