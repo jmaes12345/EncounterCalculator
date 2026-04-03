@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 
 @Component({
 	selector: 'app-enemy-input-form',
@@ -7,12 +7,12 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 	styleUrls: ['./enemy-input-form.component.scss']
 })
 export class EnemyInputFormComponent implements OnInit {
-	enemyGroup: FormGroup;
-	enemyNameControl = new FormControl(1, [Validators.required, Validators.maxLength(30)]);
-	xpControl = new FormControl(1, [Validators.min(1), Validators.required]);
-	enemyOfThisTypeCountControl = new FormControl(1, [Validators.min(1), Validators.required]);
+	enemyGroup: UntypedFormGroup;
+	enemyNameControl = new UntypedFormControl(1, [Validators.required, Validators.maxLength(30)]);
+	xpControl = new UntypedFormControl(1, [Validators.min(1), Validators.required]);
+	enemyOfThisTypeCountControl = new UntypedFormControl(1, [Validators.min(1), Validators.required]);
 
-	constructor(fb: FormBuilder) {
+	constructor(fb: UntypedFormBuilder) {
 		this.enemyGroup = fb.group({
 			enemyNameControl: this.enemyNameControl,
 			xpControl: this.xpControl,

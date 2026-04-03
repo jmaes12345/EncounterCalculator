@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 
 @Component({
 	selector: 'app-pc-input-form',
@@ -7,11 +7,11 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 	styleUrls: ['./pc-input-form.component.scss']
 })
 export class PcInputFormComponent implements OnInit {
-	pcGroup: FormGroup;
-	pcLevelControl = new FormControl(1, [Validators.min(1), Validators.max(20), Validators.required]);
-	pcCountControl = new FormControl(1, [Validators.min(1), Validators.required]);
+	pcGroup: UntypedFormGroup;
+	pcLevelControl = new UntypedFormControl(1, [Validators.min(1), Validators.max(20), Validators.required]);
+	pcCountControl = new UntypedFormControl(1, [Validators.min(1), Validators.required]);
 
-	constructor(fb: FormBuilder) {
+	constructor(fb: UntypedFormBuilder) {
 		this.pcGroup = fb.group({
 			pcLevelControl: this.pcLevelControl,
 			pcCountControl: this.pcCountControl,
