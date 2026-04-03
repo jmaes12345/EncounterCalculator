@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {PcPartyComponent} from './pc-party.component';
 
@@ -6,7 +6,7 @@ describe('PcPartyComponent', () => {
 	let component: PcPartyComponent;
 	let fixture: ComponentFixture<PcPartyComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [PcPartyComponent]
 		})
